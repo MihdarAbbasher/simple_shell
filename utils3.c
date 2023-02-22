@@ -31,6 +31,6 @@ char *remove_new_line(char *str)
 void signal_handler(int sig)
 {
 	if (sig == SIGINT)
-		write(STDOUT_FILENO, "\n($) ", 5);
+		write(STDOUT_FILENO, "\n$ ", 3);
 }
 
