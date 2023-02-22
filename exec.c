@@ -81,13 +81,15 @@ int exec(char *cname, char **opts)
 	pid_t child;
 	int status;
 
-	switch (child = fork())
+	child = fork();
+	switch (child)
 	{
 		case -1:
 			perror("fork failed");
 			return (-1);
 		case 0:
 			execve(cname, opts, environ);
+			return (0);
 		default:
 			do {
 				waitpid(child, &status, WUNTRACED);

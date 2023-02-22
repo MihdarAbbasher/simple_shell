@@ -18,6 +18,7 @@ int execBuiltInCommands(char **u_tokns, char *line)
 			{
 				case 0:
 					_handle_exit(u_tokns, line);
+					return (0);
 				case 1:
 					chdir(u_tokns[1]);
 					return (1);

@@ -7,7 +7,7 @@ void signal_handler(int sig);
   *
   * Return: Always zero.
   */
-int main()
+int main(void)
 {
 	char *line = NULL, **tokens = NULL;
 	int words_no = 0, execFlag = 0;
@@ -41,7 +41,7 @@ int main()
 			}
 
 		}
-		
+
 	}
 	return (0);
 }
