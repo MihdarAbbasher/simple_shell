@@ -9,13 +9,15 @@
 
 int contain_char(char *str, char c)
 {
-    int i;
+	int i;
 
-    while (str[i]){
-        if (str[i] == c){
-            return (1);
-        }
-        i++;
-    }
-    return (0);
+	while (str[i])
+	{
+		if (str[i] == c)
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
 }

@@ -4,12 +4,14 @@
  * split_str - split str
  * @str: string
  * @delim: delimitor
+ * Return: Always **char.
  */
 
 char **split_str(char *str, const char *delim)
 {
 	char **arr, *str_token;
 	int i;
+
 	arr = malloc(10 * sizeof(char *));
 	if (arr == NULL)
 		printf("allocation error\n"),

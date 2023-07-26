@@ -4,16 +4,17 @@
  * split_to_linked_list - split str
  * @str: string
  * @delim: delimitor
+ * Return: *char
  */
 
 list_t *split_to_linked_list(char *str, const char *delim)
 {
 	char *str_token;
 	int i;
-    list_t *mylist;
+	list_t *mylist;
 
 	mylist =  NULL;
-    str_token = strtok(str, delim);
+	str_token = strtok(str, delim);
 	i = 0;
 	while (str_token != NULL)
 	{

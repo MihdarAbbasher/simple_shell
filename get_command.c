@@ -2,7 +2,7 @@
 
 /**
  * get_command - get line cmd
- *
+ * Return: nothing
  */
 
 char *get_command()
@@ -12,12 +12,11 @@ char *get_command()
 	char *linestr;
 
 	/* printf("%s", _getenv("PWD")); // print cwd */
-	putchar('$');
-	putchar(' ');
+	write(STDOUT_FILENO, "($) ", 4);
 	size = 32;
 	act_size = 0;
 	linestr = (char *) malloc(size * sizeof(char));
-	if(linestr == NULL)
+	if (linestr == NULL)
 		printf("unable to allocate memory\n"),
 		exit(1);
 	act_size = getline(&linestr, &size, stdin);

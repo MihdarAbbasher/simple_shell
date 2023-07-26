@@ -8,14 +8,10 @@
 
 int is_exist(char *fullname)
 {
-    struct stat st;
+	struct stat st;
 
-    if (stat(fullname, &st) == 0)
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	if (stat(fullname, &st) == 0)
+		return (1);
+	else
+		return (0);
 }

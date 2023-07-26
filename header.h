@@ -35,8 +35,9 @@ void print_env();
 int _setenv(char *name, char *value, int overwrite);
 int _unsetenv(char *key);
 void run_cd(char *dir_name);
-void run_exit();
+void run_exit(char **cmd_arr, char *line);
 void print_arr(char **arr);
 char *_getenv(char *key);
+int execute_builtin_cmd(char **u_tokns, char *line);
 
 #endif

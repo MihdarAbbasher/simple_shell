@@ -8,14 +8,14 @@
  */
 
 
-void print_env()
+void print_env(void)
 {
-    unsigned int i;
+	unsigned int i;
 
-    i = 0;
-    while (environ[i] != NULL)
-    {
-        printf("%s\n", environ[i]);
-        i++;
-    }
+	i = 0;
+	while (environ[i] != NULL)
+	{
+		printf("%s\n", environ[i]);
+		i++;
+	}
 }

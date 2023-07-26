@@ -1,12 +1,15 @@
 #include "header.h"
 
 /**
- * run_cd - find dir_name
- * @dir_name: dir.
+ * run_exit - exit
+ * @cmd_arr: cmd_arr.
+ * @line: str.
  * Return: 0 if not found, 1 if found.
  */
 
-void run_exit()
+void run_exit(char **cmd_arr, char *line)
 {
-    exit(0);
+	free(line);
+	free(cmd_arr);
+	exit(0);
 }

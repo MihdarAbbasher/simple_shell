@@ -8,17 +8,21 @@
 
 void run_cd(char *dir_name)
 {
-    char new_dir[PATH_MAX];
+	char new_dir[PATH_MAX];
 
-    if (chdir(dir_name) != 0){
-        printf("bash: cd: %s: No such file or directory\n", dir_name);
-    }
-    else{
-        if (getcwd(new_dir, sizeof(new_dir)) != NULL){
-            _setenv("PWD", new_dir, 1);
-        }
-        else{
-            printf("gecwd error\n");
-        }
-    }
+	if (chdir(dir_name) != 0)
+	{
+	printf("%s: not found\n", dir_name);
+	}
+	else
+	{
+		if (getcwd(new_dir, sizeof(new_dir)) != NULL)
+		{
+			_setenv("PWD", new_dir, 1);
+		}
+		else
+		{
+			printf("gecwd error\n");
+		}
+	}
 }
