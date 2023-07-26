@@ -13,11 +13,11 @@ char *join_str(char *str1, char *str2, char c)
 	char *str;
 	int len, i, j;
 
-	len = strlen(str1) + strlen(str2) + 2;
+	len = _strlen(str1) + _strlen(str2) + 2;
 	str = malloc(len * sizeof(char));
 	if (!str)
 	{
-		printf("malloc failed");
+		_puts("malloc failed");
 		return (NULL);
 	}
 	i = 0;

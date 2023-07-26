@@ -8,7 +8,7 @@
 int main(void)
 {
 	pid_t child_pid, curr_pid;
-	int status, execute_value;
+	int status;
 	char *str, **cmd_arr, *delim, *cmd;
 
 	delim = " \t\n";
@@ -21,7 +21,8 @@ int main(void)
 		cmd = find_file(cmd_arr[0]);
 		if (!cmd)
 		{
-			printf("%s: No such file or directory\n", cmd_arr[0]);
+			_puts(cmd_arr[0]);
+			_puts(": No such file or directory\n");
 			continue;
 		}
 		child_pid = fork();
@@ -33,16 +34,15 @@ int main(void)
 		curr_pid = getpid();
 		if (child_pid == 0)
 		{
-			execute_value = execute_cmd(cmd, cmd_arr);
-			if (execute_value == -1)
+			if (execute_cmd(cmd, cmd_arr) == -1)
 				return (1);
 		}
 		else
 			wait(&status);
 	}
 	if (curr_pid == 0)
-		printf("curr pid = 0, cmd: %s\n", cmd);
+		_putchar('\n');
 	if (cmd)
-	free(cmd);
+		free(cmd);
 	return (0);
 }

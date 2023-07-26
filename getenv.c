@@ -11,12 +11,12 @@ char *_getenv(char *key)
 	char *current_str, *current_key;
 	int i, len;
 
-	len = strlen(key);
+	len = _strlen(key);
 	i = 0;
 	current_key = (char *) malloc((len + 1) * sizeof(char));
 	if (!current_key)
 	{
-		printf("malloc failed\n");
+		_puts("malloc failed\n");
 		return (NULL);
 	}
 	while (environ[i])

@@ -17,7 +17,7 @@ char *get_command()
 	act_size = 0;
 	linestr = (char *) malloc(size * sizeof(char));
 	if (linestr == NULL)
-		printf("unable to allocate memory\n"),
+		_puts("unable to allocate memory\n"),
 		exit(1);
 	act_size = getline(&linestr, &size, stdin);
 	if (act_size == -1)

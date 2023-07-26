@@ -79,12 +79,12 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
-  * _strdup - Duplicate a string
+  * _strcpy - Duplicate a string
   * @str: the string to duplicate
   *
   * Return: the string duplicated
   */
-char *_strdup(char *str)
+char *_strcpy(char *str)
 {
 	int idx = 0, len = 1;
 	char *dup_str;

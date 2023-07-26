@@ -39,5 +39,12 @@ void run_exit(char **cmd_arr, char *line);
 void print_arr(char **arr);
 char *_getenv(char *key);
 int execute_builtin_cmd(char **u_tokns, char *line);
+char *_strcat(char *dest, char *src);
+int _strlen(const char *s);
+int _strcmp(char *s1, char *s2);
+char *_strcpy(char *str);
+int _atoi(char *s);
+void _puts(char *s);
+int _putchar(char c);
 
 #endif

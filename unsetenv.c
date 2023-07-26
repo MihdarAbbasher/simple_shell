@@ -16,7 +16,7 @@ int _unsetenv(char *key)
 	{
 		if (!key || strlen(key) == 0)
 			return (0);
-		len = strlen(key);
+		len = _strlen(key);
 		i = 0;
 		current_key = (char *) malloc((len + 1) * sizeof(char));
 		if (!current_key)
@@ -35,7 +35,6 @@ int _unsetenv(char *key)
 					{
 
 						environ[i] = environ[i + 1];
-						printf("moving %i: %s\n", i, environ[i]);
 						i++;
 					}
 					return (0);

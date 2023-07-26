@@ -22,7 +22,7 @@ void run_cd(char *dir_name)
 		}
 		else
 		{
-			printf("gecwd error\n");
+			_puts("gecwd error\n");
 		}
 	}
 }

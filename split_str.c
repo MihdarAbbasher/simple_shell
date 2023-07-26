@@ -14,7 +14,7 @@ char **split_str(char *str, const char *delim)
 
 	arr = malloc(10 * sizeof(char *));
 	if (arr == NULL)
-		printf("allocation error\n"),
+		_puts("allocation error\n"),
 		exit(1);
 	str_token = strtok(str, delim);
 	i = 0;

@@ -15,7 +15,8 @@ void print_arr(char **arr)
 	i = 0;
 	while (arr[i] != NULL)
 	{
-		printf("%s\n", arr[i]);
+		_puts(arr[i]);
+		_putchar('\n');
 		i++;
 	}
 }

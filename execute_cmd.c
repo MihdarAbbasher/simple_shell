@@ -10,9 +10,7 @@
 int execute_cmd(char *cmd, char *argv[])
 {
 	if (execve(cmd, argv, environ) == -1)
-	{
-	perror("Error");
-	}
+		perror("Error");
 	return (-1);
 }
 
