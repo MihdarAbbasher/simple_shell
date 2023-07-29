@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "header.h"
 
 /**
  * _open_help - Opens the Holberton Shell help

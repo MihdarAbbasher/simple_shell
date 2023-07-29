@@ -84,7 +84,7 @@ int _strcmp(char *s1, char *s2)
   *
   * Return: the string duplicated
   */
-char *_strcpy(char *str)
+char *_strdup(char *str)
 {
 	int idx = 0, len = 1;
 	char *dup_str;

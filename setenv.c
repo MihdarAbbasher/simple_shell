@@ -18,7 +18,6 @@ int _setenv(char *name, char *value, int overwrite)
 	{
 		if (overwrite)
 		{
-			_strcpy(res, value);
 			res = value;
 		}
 	}

@@ -16,7 +16,7 @@ int main(void)
 	{
 		str = get_command();
 		cmd_arr = split_str(str, delim);
-		if (execute_builtin_cmd(cmd_arr))
+		if (execute_builtin_cmd(cmd_arr, str))
 			continue;
 		cmd = find_file(cmd_arr[0]);
 		if (!cmd)

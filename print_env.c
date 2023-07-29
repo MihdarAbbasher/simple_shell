@@ -8,7 +8,7 @@
  */
 
 
-void print_env(void)
+void _print_env(void)
 {
 	print_arr(environ);
 }

@@ -12,6 +12,10 @@ char *find_file(char *file)
 	int i;
 	unsigned int len;
 
+	if (is_exist(file))
+	{
+		return (file);
+	}
 	PATH_val = _getenv("PATH");
 	len = _strlen(PATH_val);
 	PATH_copy = malloc((len + 1) * sizeof(char));
@@ -20,7 +24,7 @@ char *find_file(char *file)
 		_puts("malloc failed\n");
 		return (NULL);
 	}
-	_strcpy(PATH_copy, PATH_val);
+	PATH_copy = _strdup(PATH_val);
 	PATH_dir_arr = split_str(PATH_copy, ":");
 	i = 0;
 	while (PATH_dir_arr[i])

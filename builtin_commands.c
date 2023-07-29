@@ -18,6 +18,7 @@ int execute_builtin_cmd(char **cmd_arr, char *line)
 			{
 				case 0:
 					run_exit(cmd_arr, line);
+					return (0);
 				case 1:
 					chdir(cmd_arr[1]);
 					return (1);

@@ -6,7 +6,7 @@
 * @head: list ptr
 * Return: Always list.
 */
-list_t *add_node_end(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, char *str)
 {
 	list_t *node, *tmp;
 
@@ -17,7 +17,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		node->str = _strcpy(str);
+		node->str = _strdup(str);
 		node->len = _strlen(str);
 		node->next = NULL;
 		if (*head == NULL)
