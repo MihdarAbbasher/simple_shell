@@ -11,7 +11,7 @@ char *get_command()
 	int act_size;
 	char *linestr;
 
-	/* printf("%s", _getenv("PWD")); // print cwd */
+	/* printf("%s$ ", _getenv("PWD")); */
 	write(STDOUT_FILENO, "($) ", 4);
 	size = 32;
 	act_size = 0;

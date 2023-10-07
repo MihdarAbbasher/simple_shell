@@ -1,0 +1,30 @@
+#include "header.h"
+
+/**
+ * main - simple shell
+ * Return: Always 0.
+ */
+
+int main(void)
+{
+	char *str, **cmd_arr, *delim;
+
+	delim = " \t\n";
+	while (1)
+	{
+		str = get_command();
+		printf("line: %s", str);
+		cmd_arr = split_str(str, delim);
+		if (execute_builtin_cmd(cmd_arr, cmd_arr[0]))
+		{
+			free_cmd(cmd_arr);
+			free(line);
+			continue;
+		}
+		printf("line: %s", str);
+
+		print_arr(cmd_arr);
+	}
+		
+	return (0);
+}

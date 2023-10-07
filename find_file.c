@@ -10,7 +10,7 @@ char *find_file(char *file)
 {
 	char *PATH_val, **PATH_dir_arr, *fullname, *PATH_copy;
 	int i;
-	unsigned int len;
+	int len;
 
 	if (is_exist(file))
 	{
@@ -29,10 +29,10 @@ char *find_file(char *file)
 	i = 0;
 	while (PATH_dir_arr[i])
 	{
+		printf("while i: %i\n", i);
 		fullname = join_str(PATH_dir_arr[i], file, '/');
 		if (is_exist(fullname))
 		{
-			free(PATH_copy);
 			return (fullname);
 		}
 		i++;

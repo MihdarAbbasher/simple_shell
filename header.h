@@ -47,5 +47,6 @@ int _atoi(char *s);
 void _puts(char *s);
 int _putchar(char c);
 void _open_help(void);
+void free_cmd(char **str);
 
 #endif

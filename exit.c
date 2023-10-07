@@ -9,7 +9,7 @@
 
 void run_exit(char **cmd_arr, char *line)
 {
+	free_cmd(cmd_arr);
 	free(line);
-	free(cmd_arr);
 	exit(0);
 }

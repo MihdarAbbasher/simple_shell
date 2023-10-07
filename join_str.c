@@ -11,10 +11,12 @@
 char *join_str(char *str1, char *str2, char c)
 {
 	char *str;
-	int len, i, j;
+	int i, j, len;
 
 	len = _strlen(str1) + _strlen(str2) + 2;
-	str = malloc(len * sizeof(char));
+	printf("joined len: %d, str1: %s, str2: %s\n", len, str1, str2);
+	str = malloc(sizeof(char) * len);
+	printf("joined ptr: %p\n", str);
 	if (!str)
 	{
 		_puts("malloc failed");
@@ -35,5 +37,6 @@ char *join_str(char *str1, char *str2, char c)
 		j++;
 	}
 	str[i + j] = '\0';
+	printf("joined str: %s\n", str);
 	return (str);
 }

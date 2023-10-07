@@ -14,13 +14,16 @@ int _unsetenv(char *key)
 	res = _getenv(key);
 	if (res)
 	{
-		if (!key || strlen(key) == 0)
+		if (!key || _strlen(key) == 0)
 			return (0);
 		len = _strlen(key);
 		i = 0;
 		current_key = (char *) malloc((len + 1) * sizeof(char));
 		if (!current_key)
+		{
+			_puts("allocation error\n");
 			return (-1);
+		}
 		while (environ[i])
 		{
 			current_str = environ[i];

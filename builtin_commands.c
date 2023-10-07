@@ -20,7 +20,7 @@ int execute_builtin_cmd(char **cmd_arr, char *line)
 					run_exit(cmd_arr, line);
 					return (0);
 				case 1:
-					chdir(cmd_arr[1]);
+					run_cd(cmd_arr[1]);
 					return (1);
 				case 2:
 					_open_help();

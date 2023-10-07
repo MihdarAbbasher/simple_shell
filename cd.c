@@ -12,7 +12,7 @@ void run_cd(char *dir_name)
 
 	if (chdir(dir_name) != 0)
 	{
-	printf("%s: not found\n", dir_name);
+		printf("%s: not found\n", dir_name);
 	}
 	else
 	{
@@ -22,7 +22,7 @@ void run_cd(char *dir_name)
 		}
 		else
 		{
-			_puts("gecwd error\n");
+			_puts("getcwd error\n");
 		}
 	}
 }

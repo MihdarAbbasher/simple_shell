@@ -1,0 +1,21 @@
+#include "header.h"
+
+/**
+ * main - simple shell
+ * Return: Always 0.
+ */
+
+int main(void)
+{
+	char *res;
+	char *str = "first string ";
+	char *str2 = "second variable";
+	char s = '&';
+	res = join_str(str, str2, s);
+	printf ("res: %s\n", res);
+	free(res);
+
+	
+		
+	return (0);
+}

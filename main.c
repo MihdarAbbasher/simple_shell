@@ -7,42 +7,34 @@
 
 int main(void)
 {
-	pid_t child_pid, curr_pid;
+	char *str, *delim, **cmd_arr;
+	pid_t child_pid;
 	int status;
-	char *str, **cmd_arr, *delim, *cmd;
 
 	delim = " \t\n";
 	while (1)
 	{
 		str = get_command();
 		cmd_arr = split_str(str, delim);
-		if (execute_builtin_cmd(cmd_arr, str))
-			continue;
-		cmd = find_file(cmd_arr[0]);
-		if (!cmd)
+		if (is_exist(str))
 		{
-			_puts(cmd_arr[0]);
-			_puts(": No such file or directory\n");
-			continue;
-		}
-		child_pid = fork();
-		if (child_pid == -1)
-		{
-			perror("Error:");
-			return (1);
-		}
-		curr_pid = getpid();
-		if (child_pid == 0)
-		{
-			if (execute_cmd(cmd, cmd_arr) == -1)
+			child_pid = fork();
+			if (child_pid == -1)
+			{
+				perror("Error:");
 				return (1);
+			}
+			if (child_pid == 0)
+			{
+				if (execute_cmd(str, cmd_arr) == -1)
+					return (1);
+			}
+			else
+				wait(&status);
 		}
 		else
-			wait(&status);
+			printf("%s: command not found\n", str);
 	}
-	if (curr_pid == 0)
-		_putchar('\n');
-	if (cmd)
-		free(cmd);
+		
 	return (0);
 }
